@@ -1,0 +1,414 @@
+Disabling updates already done
+Discord 0.0.124
+(electron) 'session.getPreloads' is deprecated and will be removed. Please use 'session.getPreloadScripts' instead.
+(electron) 'session.setPreloads' is deprecated and will be removed. Please use 'session.registerPreloadScript' instead.
+Starting app.
+Starting updater.
+2/17/2026, 9:00:47 PM PST [Modules] Modules initializing
+2/17/2026, 9:00:47 PM PST [Modules] Distribution: remote
+2/17/2026, 9:00:47 PM PST [Modules] Host updates: disabled
+2/17/2026, 9:00:47 PM PST [Modules] Module updates: enabled
+2/17/2026, 9:00:47 PM PST [Modules] Module install path: /home/rocket/.var/app/com.discordapp.Discord/config/discord/0.0.124/modules
+2/17/2026, 9:00:47 PM PST [Modules] Module installed file path: /home/rocket/.var/app/com.discordapp.Discord/config/discord/0.0.124/modules/installed.json
+2/17/2026, 9:00:47 PM PST [Modules] Module download path: /home/rocket/.var/app/com.discordapp.Discord/config/discord/0.0.124/modules/pending
+splashScreen.initSplash(false)
+blackbox: 2/17/2026, 9:00:47 PM PST 0 
+
+----------------------------------------------
+blackbox: 2/17/2026, 9:00:47 PM PST 1 Discord starting: {"releaseChannel":"stable","version":"0.0.124"}, modulepath: /home/rocket/.var/app/com.discordapp.Discord/config/discord/0.0.124/modules
+blackbox: 2/17/2026, 9:00:47 PM PST 2 ✅ webContents.created web1 ""
+blackbox: 2/17/2026, 9:00:47 PM PST 3 ✅ window.created win1 "discord"
+(electron) 'console-message' arguments are deprecated and will be removed. Please use Event<WebContentsConsoleMessageEventParams> object instead.
+21:00:48.124 › DiscordSplash.signalReady
+splashScreen: SPLASH_SCREEN_READY
+splashScreen.webContentsSend: SPLASH_SCREEN_QUOTE SPLASH_SCREEN_QUOTE [ 'Hold Tight — Loading Discord' ]
+2/17/2026, 9:00:48 PM PST [Modules] No updates to install
+splashScreen: no-pending-updates
+2/17/2026, 9:00:48 PM PST [Modules] Host is up to date.
+2/17/2026, 9:00:48 PM PST [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+splashScreen: checking-for-updates
+splashScreen.updateSplashState checking-for-updates checking-for-updates {}
+splashScreen.webContentsSend: SPLASH_UPDATE_STATE SPLASH_UPDATE_STATE [ { status: 'checking-for-updates' } ]
+21:00:48.207 › DiscordSplash.onStateUpdate: {"status":"checking-for-updates"}
+21:00:48.208 › Splash.onStateUpdate: {"status":"checking-for-updates"}
+blackbox: 2/17/2026, 9:00:48 PM PST 4 ✅ webContents.did-finish-load web1
+2/17/2026, 9:00:48 PM PST [Modules] No module updates available.
+splashScreen: update-check-finished true 0 false
+splashScreen.launchMainWindow: false
+Optional module ./ElectronTestRpc was not included.
+Clearing GPU cache...
+splashScreen.updateSplashState launching launching {}
+splashScreen.webContentsSend: SPLASH_UPDATE_STATE SPLASH_UPDATE_STATE [ { status: 'launching' } ]
+21:00:48.314 › DiscordSplash.onStateUpdate: {"status":"launching"}
+21:00:48.314 › Splash.onStateUpdate: {"status":"launching"}
+blackbox: 2/17/2026, 9:00:48 PM PST 5 ✅ webContents.created web2 ""
+Clearing code cache...
+blackbox: 2/17/2026, 9:00:48 PM PST 6 ✅ window.created win2 "Discord"
+[ConnectivityTester udy83l] Sending DNS query: idt-udy83l-mlrkdi7d.loc-en-us.chk-webapp.res-ok.dur-0.v1.dc-telemetry.net
+21:00:48.816 › [FAST CONNECT] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream, encoding: etf, version: 9
+[5:0217/210048.861264:ERROR:dbus/object_proxy.cc:590] Failed to call method: org.kde.KWallet.isEnabled: object_path= /modules/kwalletd6: org.freedesktop.DBus.Error.ServiceUnknown: org.freedesktop.DBus.Error.ServiceUnknown
+[5:0217/210048.861282:ERROR:components/os_crypt/sync/kwallet_dbus.cc:113] Error contacting kwalletd6 (isEnabled)
+[5:0217/210048.861407:ERROR:dbus/object_proxy.cc:590] Failed to call method: org.kde.KLauncher.start_service_by_desktop_name: object_path= /KLauncher: org.freedesktop.DBus.Error.ServiceUnknown: org.freedesktop.DBus.Error.ServiceUnknown
+[5:0217/210048.861418:ERROR:components/os_crypt/sync/kwallet_dbus.cc:82] Error contacting klauncher to start kwalletd6
+[5:0217/210048.861574:ERROR:dbus/object_proxy.cc:590] Failed to call method: org.kde.KWallet.close: object_path= /modules/kwalletd6: org.freedesktop.DBus.Error.ServiceUnknown: org.freedesktop.DBus.Error.ServiceUnknown
+[5:0217/210048.861590:ERROR:components/os_crypt/sync/kwallet_dbus.cc:408] Error contacting kwalletd6 (close)
+21:00:48.955 › [FAST CONNECT] sending identify
+blackbox: 2/17/2026, 9:00:49 PM PST 7 ✅ webContents.did-finish-load web2
+21:00:49.026 › [libdiscore] [experiment_manager] Loaded experiments from cache
+21:00:49.036 › [libdiscore] [BlockedDomainsStore] Deserialized 41705 hashes, revision 2526
+21:00:49.123 › Splash.updateCountdownSeconds: undefined
+21:00:49.387 › Initializing voice engine with audio subsystem: standard
+21:00:49.564 › [DatabaseManager] active user changed (now: 746441754831749251, was: null, was: undefined)
+legacyModuleUpdater: installed-module discord_krisp 1 1 true
+legacyModuleUpdater: installed-module discord_game_utils 1 1 true
+21:00:49.664 › [default] [BUILD INFO] Release Channel: stable, Build Number: 498109, Version Hash: 1bd83914e01fc862eb5b7fe54e1d7adf9fe0f635
+21:00:49.898 › [CloudSyncUtils] CloudSync is not supported on this platform
+21:00:49.927 › [default] [NATIVE INFO] host 0.0.124, modules: discord_desktop_core: 1, discord_erlpack: 1, discord_spellcheck: 1, discord_utils: 1, discord_voice: 1, discord_zstd: 1, discord_krisp: 1, discord_game_utils: 1, discord_rpc: 1, build: null
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+ipcMain.on(IPCEvents.APP_ASYNC_INDEX_TSX_LOADED) false false
+splashScreen.pageReady
+21:00:49.931 › [MediaEngineStore] OpenH264 download failed TypeError: p.fileManager.maybeDownloadOpenH264 is not a function
+21:00:49.931 › [libdiscore] The answer for life the universe and everything is: 42
+21:00:49.952 › [Spellchecker] sh is not a valid locale.
+blackbox: 2/17/2026, 9:00:50 PM PST 8 window.close win1
+blackbox: 2/17/2026, 9:00:50 PM PST 9 webContents.destroyed web1
+blackbox: 2/17/2026, 9:00:50 PM PST 10 window.closed win1
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+21:00:50.333 › [Spellchecker] Switching to en-US (available)
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+legacyModuleUpdater: installed-module discord_rpc 1 1 true
+mainScreen.UpdaterEvents: UPDATER_HISTORY_QUERY_AND_TRUNCATE
+21:00:50.884 › [ConnectionStore] Socket is reconnecting because of starting new session
+21:00:50.884 › [GatewaySocket] .connect() called, new state is WILL_RECONNECT
+21:00:50.884 › [GatewaySocket] Setting connection state to WILL_RECONNECT
+21:00:50.884 › [GatewaySocket] Setting connection state to CONNECTING
+21:00:50.884 › [GatewaySocket] [CONNECT] wss://gateway.discord.gg, encoding: etf, version: 9, compression: zstd-stream
+21:00:50.884 › [GatewaySocket] [FAST CONNECT] successfully took over websocket, state: [object Object]
+21:00:50.885 › [GatewaySocket] [CONNECTED] wss://gateway.discord.gg/?encoding=etf&v=9&compress=zstd-stream in 0 ms
+21:00:50.885 › [ConnectionStore] handleIdentify called [object Object]
+21:00:50.885 › [GatewaySocket] Setting connection state to IDENTIFYING
+21:00:50.885 › [GatewaySocket] [IDENTIFY, fast-connect]
+21:00:50.885 › [GatewaySocket] [HELLO] via 
+gateway-prd-arm-us-east1-d-9513: 0, heartbeat interval: 41250, took 1 ms
+21:00:50.997 › [GatewaySocket] [READY] took 113ms, as d192d43c3367d143815be223bdd16ea5
+21:00:50.998 › [GatewaySocket] 
+gateway-prd-arm-us-east1-d-9513: 414.953
+|  id_created: 0.733
+|  session_lookup_time: 0.424
+|  session_lookup_finished: 0.034
+|  discord-sessions-prd-2-84: 407.651
+|  |  start_session: 314.179
+|  |  |  discord-api-prd-canary-rpc-569fc8dcbc-6jcdq: 246.36
+|  |  |  |  get_user: 14.461
+|  |  |  |  get_guilds: 24.545
+|  |  |  |  user_settings_proto: 0.059
+|  |  |  |  relationships: 157.058
+|  |  |  |  game_relationships: 0.004
+|  |  |  |  friend_suggestion: 0.068
+|  |  |  |  connections: 0.138
+|  |  |  |  serialized_read_states: 0.007
+|  |  |  |  send_scheduled_deletion_message: 0.003
+|  |  |  |  sanitize_premium_perks: 0.003
+|  |  |  |  guild_join_requests: 0.002
+|  |  |  |  user_guild_settings: 0.003
+|  |  |  |  serialized_private_channels: 0.002
+|  |  |  |  user_segments: 0.008
+|  |  |  |  game_invites: 0.002
+|  |  |  |  blocker_ids: 0.002
+|  |  |  |  affine_user_ids: 14.762
+|  |  |  |  experiments: 37.639
+|  |  |  |  required_action: 0.014
+|  |  |  |  authorized_ip_coro: 0.004
+|  |  |  |  pending_payments: 2.769
+|  |  |  |  apex_experiments: 48.299
+|  |  |  |  sessions_experiments: 0.005
+|  |  |  |  user_activities: 0.003
+|  |  |  |  played_application_ids: 0.002
+|  |  |  |  linked_users: 0.003
+|  |  |  |  ad_personalization_toggles_disabled: 0.002
+|  |  |  |  regional_feature_config: 0.01
+|  |  starting_guild_connect: 0.061
+|  |  presence_started: 0.299
+|  |  guilds_started: 0.598
+|  |  lobbies_started: 0.001
+|  |  guilds_connect: 89.854
+|  |  presence_connect: 0.002
+|  |  connect_finished: 90.193
+|  |  build_ready: 1.942
+|  |  clean_ready: 0.001
+|  |  optimize_ready: 0.348
+|  |  split_ready: 0.027
+21:00:50.998 › [GatewaySocket] Setting connection state to SESSION_ESTABLISHED
+21:00:50.998 › [GatewaySocket] Updating resume url to wss://gateway-us-east1-d.discord.gg
+21:00:51.000 › [GatewaySocket] [READY_SUPPLEMENTAL] took 116ms
+21:00:51.000 › [GatewaySocket] Setting connection state to SESSION_ESTABLISHED
+21:00:51.001 › [Flux] Slow dispatch on START_SESSION: 117.29999999701977ms
+21:00:51.167 › [Flux] Dispatching CONNECTION_OPEN
+21:00:51.169 › [AuthenticationStore] handleConnectionOpen called [object Object]
+21:00:51.171 › [DatabaseManager] removing database (user: 746441754831749251, database: undefined)
+21:00:51.172 › [DatabaseManager] added database (746441754831749251 → null)
+21:00:51.181 › [NativeDispatchUtils] Tried getting Dispatch instance before instantiated
+21:00:51.239 › [OverlayRenderStore] setOverlayEnabled: not supported
+21:00:51.512 › [RPCServer:WSS] Starting on 6463
+21:00:51.515 › [RPCServer:IPC] Starting on /run/user/1000/discord-ipc-0
+mainScreen.UpdaterEvents: CHECK_FOR_UPDATES UPDATE_NOT_AVAILABLE
+2/17/2026, 9:00:53 PM PST [Modules] Host is up to date.
+2/17/2026, 9:00:53 PM PST [Modules] Checking for module updates at https://discord.com/api/modules/stable/versions.json
+21:00:53.274 › [OverlayKeybindExperimentManager] Experiments initializing...
+2/17/2026, 9:00:53 PM PST [Modules] No module updates available.
+legacyModuleUpdater: update-check-finished
+21:00:53.336 › [OverlayKeybindExperimentManager] Experiments initialized
+21:00:53.383 › [libdiscore] [Cache] Set cache for key: experiments_snapshot
+21:00:54.482 › [Flux] Slow dispatch on GAMES_DATABASE_UPDATE: 635.5ms
+21:00:57.728 › [RTCLatencyTestManager] RTC region latency test completed, ranked regions are:  santa-clara,us-west,seattle,us-south,us-central
+21:00:59.931 › [MessageActionCreators] Fetching messages for 1324534594544074763 between undefined and undefined. jump={"jumpType":"ANIMATED"}
+21:01:00.168 › [MessageActionCreators] Fetched 0 messages for 1324534594544074763 isBefore:false isAfter:false
+21:01:00.168 › [ChannelMessages] loadComplete: resetting state for channelId=1324534594544074763, sending.length=0
+[5:0217/210100.267591:ERROR:ui/gfx/x/atom_cache.cc:232] Add chromium/from-privileged to kAtomsToCache
+21:01:01.195 › [ReadStateStore] Deleting ReadState 594921544082391065 0 [object Object]
+21:01:01.289 › [discord_protos.discord_users.v1.PreloadedUserSettings] Updating guildFolders with delay 10
+21:01:01.298 › [discord_protos.discord_users.v1.PreloadedUserSettings] Scheduling save from markDirty
+21:01:01.311 › [ReadStateStore] Deleting ReadState 1331523403563401227 0 [object Object]
+21:01:01.433 › [MessageActionCreators] Fetching messages for 763210535490682896 between undefined and undefined. jump={"jumpType":"ANIMATED"}
+21:01:01.545 › [Routing/Utils] transitionTo - Transitioning to /channels/763210534807404565/763210535490682896
+21:01:01.818 › [MessageActionCreators] Fetched 30 messages for 763210535490682896 isBefore:false isAfter:false
+21:01:01.824 › [ChannelMessages] loadComplete: resetting state for channelId=763210535490682896, sending.length=0
+21:01:03.315 › [libdiscore] [NETWORK] Sending GET request to https://cdn.discordapp.com/bad-domains/current_revision.txt
+21:01:03.347 › [libdiscore] [NETWORK] Completed GET request to https://cdn.discordapp.com/bad-domains/current_revision.txt with status: 200
+21:01:03.369 › [libdiscore] [BlockedDomainsStore] Fetching delta between revisions 2526 -> 2530
+21:01:03.369 › [libdiscore] [NETWORK] Sending GET request to https://discord.com/bad-hash-delta
+21:01:03.394 › [libdiscore] [NETWORK] Completed GET request to https://discord.com/bad-hash-delta with status: 200
+21:01:03.400 › [libdiscore] [BlockedDomainsStore] Adding 5 hashes, removing 0 hashes
+21:01:03.411 › [libdiscore] [Cache] Set cache for key: blocked_domains_state
+21:01:03.411 › [libdiscore] [BlockedDomainsStore] Successfully fetched blocked domains
+21:01:03.693 › [Routing/Utils] transitionTo - Transitioning to /channels/1324534594103677018/1324534594544074763
+21:01:03.775 › ResizeObserver loop completed with undelivered notifications.
+21:01:04.127 › Could not find a View Model linked to Artboard Artboard.
+21:01:04.129 › Could not find a View Model linked to Artboard Artboard.
+21:01:05.118 › [RTCControlSocket(default)] [CONNECT] wss://c-sjc01-24a3e381.discord.media:2087/
+21:01:05.119 › [RTCConnection(1324534594103677018, default)] Connecting to RTC server wss://c-sjc01-24a3e381.discord.media:2087/, rtc-connection-id: 0a85dffd-5395-463f-9454-e239c03803e2, channel: 1324534594544074763(2)
+21:01:05.119 › [RTCConnection(1324534594103677018, default)] RTC connection state: AWAITING_ENDPOINT => CONNECTING
+21:01:05.293 › [RTCConnection(1324534594103677018, default)] Connected to RTC server.
+21:01:05.293 › [RTCControlSocket(default)] [CONNECTED] wss://c-sjc01-24a3e381.discord.media:2087/ in 175 ms
+21:01:05.295 › [RTCConnection(1324534594103677018, default)] RTC connection state: CONNECTING => AUTHENTICATING
+21:01:05.303 › [RTCControlSocket(default)] [HELLO] heartbeat interval: 13750, version: 8, took 185 ms
+21:01:05.304 › [RTCControlSocket(default)] Starting heartbeat with interval: 13750
+21:01:05.311 › [RTCControlSocket(default)] [READY] took 193 ms
+21:01:05.311 › [RTCConnection(1324534594103677018, default)] RTC connection state: AUTHENTICATING => RTC_CONNECTING
+21:01:05.315 › [Connection(default)] Creating connection to 104.29.138.25:19321 with audio ssrc: 5585
+21:01:05.317 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:01:05.319 › [Connection(default)] updateVideoQuality: {"encodingVideoWidth":1280,"encodingVideoHeight":720,"encodingVideoFrameRate":30,"captureVideoFrameRate":30,"remoteSinkWantsMaxFramerate":30,"remoteSinkWantsPixelCount":921600,"encodingVideoBitRate":2500000,"encodingVideoMinBitRate":150000,"encodingVideoMaxBitRate":2500000,"streamParameters":[{"type":"video","active":false,"rid":"50","ssrc":5586,"rtxSsrc":5587,"quality":50,"maxBitrate":2500000,"maxFrameRate":30,"maxResolution":{"type":"fixed","width":1280,"height":720},"minBitrate":150000,"targetBitrate":0,"maxPixelCount":921600},{"type":"video","active":false,"rid":"100","ssrc":5588,"rtxSsrc":5589,"quality":100,"maxBitrate":2500000,"maxFrameRate":30,"maxResolution":{"type":"fixed","width":1280,"height":720},"minBitrate":150000,"targetBitrate":0,"maxPixelCount":921600}]}
+21:01:05.320 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsPixelCount":921600,"remoteSinkWantsMaxFramerate":30,"encodingVideoMinBitRate":150000,"encodingVideoMaxBitRate":2500000,"encodingVideoBitRate":2500000,"streamParameters":[{"type":"video","active":false,"rid":"50","ssrc":5586,"rtxSsrc":5587,"quality":50,"maxBitrate":2500000,"maxFrameRate":30,"maxResolution":{"type":"fixed","width":1280,"height":720},"minBitrate":150000,"targetBitrate":0,"maxPixelCount":921600},{"type":"video","active":false,"rid":"100","ssrc":5588,"rtxSsrc":5589,"quality":100,"maxBitrate":2500000,"maxFrameRate":30,"maxResolution":{"type":"fixed","width":1280,"height":720},"minBitrate":150000,"targetBitrate":0,"maxPixelCount":921600}]}
+21:01:05.326 › [Connection(default)] Connected with local address 207.197.59.226:44256 and protocol: udp
+21:01:05.333 › [Connection(default)] Available engine codecs: "[{\"codec\":\"AV1\",\"decode\":true,\"encode\":false},{\"codec\":\"H264\",\"decode\":true,\"encode\":true},{\"codec\":\"H265\",\"decode\":true,\"encode\":false},{\"codec\":\"VP8\",\"decode\":true,\"encode\":true}]\n"
+21:01:05.333 › [Connection(default)] Experimental codecs: [{"name":"AV1","encode":false,"decode":true},{"name":"H265","encode":true,"decode":true}]
+21:01:05.333 › [Connection(default)] Audio codecs: opus
+21:01:05.333 › [Connection(default)] Video codecs: AV1[encode: false, decode: true],H265[encode: false, decode: true],H264[encode: true, decode: true],VP8[encode: true, decode: true]
+21:01:05.334 › [Connection(default)] Encryption modes: aead_aes256_gcm_rtpsize,aead_aes256_gcm,aead_xchacha20_poly1305_rtpsize,xsalsa20_poly1305_lite_rtpsize,xsalsa20_poly1305_lite,xsalsa20_poly1305_suffix,xsalsa20_poly1305
+21:01:05.334 › [Connection(default)] Connection state change: CONNECTING => CONNECTED
+21:01:05.335 › [RTCConnection(1324534594103677018, default)] RTC media connection state change: RTC_CONNECTING => CONNECTED
+21:01:05.335 › [RTCConnection(1324534594103677018, default)] RTC connection state: RTC_CONNECTING => RTC_CONNECTED
+21:01:05.337 › [RTCConnection(1324534594103677018, default)] RTC connected to media server: 104.29.138.25:19321
+21:01:05.338 › [RTCConnection(1324534594103677018, default)] Sending UDP info to RTC server. [object Object] fixed_keyframe_interval,keyframe_on_join
+21:01:05.364 › [RTCConnection(1324534594103677018, default)] Setting media-session-id: 50042e32b9d3fa86d7d02f0dfcc52ea8 for rtc-connection-id: 0a85dffd-5395-463f-9454-e239c03803e2
+21:01:05.365 › [Connection(default)] Selected encryption mode: aead_aes256_gcm_rtpsize
+21:01:05.365 › [RTCConnection(1324534594103677018, default)] DAVE protocol init with protocol version: 1
+21:01:05.366 › [RTCConnection(1324534594103677018, default)] Remote media sink wants: {"any":100}
+21:01:05.366 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsPixelCount":921600,"remoteSinkWantsMaxFramerate":30,"encodingVideoMinBitRate":150000,"encodingVideoMaxBitRate":2500000,"encodingVideoBitRate":2500000,"streamParameters":[{"type":"video","active":false,"rid":"50","ssrc":5586,"rtxSsrc":5587,"quality":50,"maxBitrate":2500000,"maxFrameRate":30,"maxResolution":{"type":"fixed","width":1280,"height":720},"minBitrate":150000,"targetBitrate":0,"maxPixelCount":921600},{"type":"video","active":false,"rid":"100","ssrc":5588,"rtxSsrc":5589,"quality":100,"maxBitrate":2500000,"maxFrameRate":30,"maxResolution":{"type":"fixed","width":1280,"height":720},"minBitrate":150000,"targetBitrate":0,"maxPixelCount":921600}]}
+21:01:05.366 › [RTCConnection(1324534594103677018, default)] Received MLS external sender package
+21:01:05.367 › [Connection(default)] DAVE protocol state update: {"version":1,"epochAuthenticator":""}
+21:01:05.368 › [RTCConnection(1324534594103677018, default)] Got MLS key package, sending to RTC server
+21:01:05.369 › [RTCControlSocket(default)] Sending MLS key package
+21:01:06.905 › [InputWatcher] Silence: false
+21:01:10.956 › The resource https://discord.com/assets/189422196a4f8b53.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:10.956 › The resource https://discord.com/assets/ce3b8055f5114434.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:10.956 › The resource https://discord.com/assets/cb2006dbced0e246.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:10.957 › The resource https://discord.com/assets/7a6a566c2e88a35d.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:10.957 › The resource https://discord.com/assets/e52f0cba712e2fb4.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:10.957 › The resource https://discord.com/assets/dd24010f3cf7def7.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:11.301 › [discord_protos.discord_users.v1.PreloadedUserSettings] Persisting proto
+21:01:14.518 › The resource https://discord.com/assets/189422196a4f8b53.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:14.518 › The resource https://discord.com/assets/ce3b8055f5114434.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:14.518 › The resource https://discord.com/assets/cb2006dbced0e246.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:14.518 › The resource https://discord.com/assets/7a6a566c2e88a35d.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:14.519 › The resource https://discord.com/assets/e52f0cba712e2fb4.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:14.519 › The resource https://discord.com/assets/dd24010f3cf7def7.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:18.665 › The resource https://discord.com/assets/189422196a4f8b53.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:18.665 › The resource https://discord.com/assets/ce3b8055f5114434.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:18.666 › The resource https://discord.com/assets/cb2006dbced0e246.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:18.666 › The resource https://discord.com/assets/7a6a566c2e88a35d.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:18.666 › The resource https://discord.com/assets/e52f0cba712e2fb4.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:18.666 › The resource https://discord.com/assets/dd24010f3cf7def7.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:01:19.056 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 1
+21:01:19.068 › [RTCControlSocket(default)] Heartbeat ACK received
+21:01:32.808 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 1
+21:01:32.820 › [RTCControlSocket(default)] Heartbeat ACK received
+21:01:33.719 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:01:33.719 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:01:42.020 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:01:46.558 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 1
+21:01:46.571 › [RTCControlSocket(default)] Heartbeat ACK received
+21:02:00.307 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 1
+21:02:00.318 › [RTCControlSocket(default)] Heartbeat ACK received
+21:02:01.582 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:02:01.582 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:02:11.311 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:02:14.057 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 1
+21:02:14.069 › [RTCControlSocket(default)] Heartbeat ACK received
+21:02:15.809 › [discord_protos.discord_users.v1.FrecencyUserSettings] Loading proto
+21:02:15.985 › [Connection(default)] Creating user: 546161939105972234 with audio SSRC: 0 and video SSRCs: 
+21:02:16.083 › [RTCConnection(1324534594103677018, default)] Received MLS proposals
+21:02:16.085 › [RTCConnection(1324534594103677018, default)] Received MLS welcome for transition ID 0
+21:02:16.088 › [RTCConnection(1324534594103677018, default)] Sending MLS commit welcome message
+21:02:16.088 › [RTCControlSocket(default)] Sending MLS commit + welcome message
+21:02:16.089 › [Connection(default)] DAVE protocol state update: {"version":1,"epochAuthenticator":"h45lLq90cI4R6UQSn2Fywskdc2WN7grZF/cg/NUh0JA="}
+21:02:17.325 › [Connection(default)] Creating user: 546161939105972234 with audio SSRC: 5593 and video SSRCs: 
+21:02:22.090 › The resource https://discord.com/assets/189422196a4f8b53.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:02:22.090 › The resource https://discord.com/assets/ce3b8055f5114434.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:02:22.090 › The resource https://discord.com/assets/cb2006dbced0e246.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:02:22.091 › The resource https://discord.com/assets/7a6a566c2e88a35d.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:02:22.091 › The resource https://discord.com/assets/e52f0cba712e2fb4.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:02:22.091 › The resource https://discord.com/assets/dd24010f3cf7def7.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:02:27.806 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:02:27.820 › [RTCControlSocket(default)] Heartbeat ACK received
+21:02:41.557 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:02:41.567 › [RTCControlSocket(default)] Heartbeat ACK received
+21:02:55.306 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:02:55.317 › [RTCControlSocket(default)] Heartbeat ACK received
+21:03:09.056 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:03:09.076 › [RTCControlSocket(default)] Heartbeat ACK received
+21:03:22.805 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:03:22.830 › [RTCControlSocket(default)] Heartbeat ACK received
+21:03:26.142 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:03:26.143 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:03:27.710 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:03:36.557 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:03:36.577 › [RTCControlSocket(default)] Heartbeat ACK received
+21:03:45.542 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:03:45.542 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:03:47.827 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:03:50.308 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:03:50.320 › [RTCControlSocket(default)] Heartbeat ACK received
+21:04:04.060 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:04:04.075 › [RTCControlSocket(default)] Heartbeat ACK received
+21:04:17.806 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:04:17.819 › [RTCControlSocket(default)] Heartbeat ACK received
+21:04:31.557 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:04:31.569 › [RTCControlSocket(default)] Heartbeat ACK received
+21:04:45.306 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:04:45.318 › [RTCControlSocket(default)] Heartbeat ACK received
+21:04:59.054 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:04:59.067 › [RTCControlSocket(default)] Heartbeat ACK received
+21:05:02.390 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:05:02.390 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:05:12.808 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:05:12.820 › [RTCControlSocket(default)] Heartbeat ACK received
+21:05:19.066 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:05:26.555 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:05:26.579 › [RTCControlSocket(default)] Heartbeat ACK received
+21:05:40.308 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:05:40.320 › [RTCControlSocket(default)] Heartbeat ACK received
+21:05:45.545 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:05:45.546 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:05:52.308 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:05:54.057 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:05:54.070 › [RTCControlSocket(default)] Heartbeat ACK received
+21:05:57.690 › The resource https://discord.com/assets/189422196a4f8b53.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:05:57.690 › The resource https://discord.com/assets/ce3b8055f5114434.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:05:57.690 › The resource https://discord.com/assets/cb2006dbced0e246.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:05:57.691 › The resource https://discord.com/assets/7a6a566c2e88a35d.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:05:57.691 › The resource https://discord.com/assets/e52f0cba712e2fb4.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:05:57.691 › The resource https://discord.com/assets/dd24010f3cf7def7.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:06:07.806 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:06:07.818 › [RTCControlSocket(default)] Heartbeat ACK received
+21:06:21.556 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:06:21.570 › [RTCControlSocket(default)] Heartbeat ACK received
+21:06:24.310 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:06:24.310 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:06:26.228 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:06:35.308 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:06:35.319 › [RTCControlSocket(default)] Heartbeat ACK received
+21:06:49.056 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:06:49.067 › [RTCControlSocket(default)] Heartbeat ACK received
+21:07:02.808 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:07:02.819 › [RTCControlSocket(default)] Heartbeat ACK received
+21:07:09.177 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:07:09.178 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:07:13.108 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:07:16.555 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:07:16.569 › [RTCControlSocket(default)] Heartbeat ACK received
+21:07:30.308 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:07:30.321 › [RTCControlSocket(default)] Heartbeat ACK received
+21:07:44.054 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:07:44.066 › [RTCControlSocket(default)] Heartbeat ACK received
+21:07:57.807 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:07:57.819 › [RTCControlSocket(default)] Heartbeat ACK received
+21:08:11.556 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:08:11.569 › [RTCControlSocket(default)] Heartbeat ACK received
+21:08:25.305 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:08:25.317 › [RTCControlSocket(default)] Heartbeat ACK received
+21:08:39.056 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:08:39.072 › [RTCControlSocket(default)] Heartbeat ACK received
+21:08:52.808 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:08:52.837 › [RTCControlSocket(default)] Heartbeat ACK received
+21:09:06.555 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:09:06.567 › [RTCControlSocket(default)] Heartbeat ACK received
+21:09:07.602 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:09:07.603 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:09:10.951 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:09:20.306 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:09:20.318 › [RTCControlSocket(default)] Heartbeat ACK received
+blackbox: 2/17/2026, 9:09:26 PM PST 11 window.close win2
+21:09:30.017 › The resource https://discord.com/assets/189422196a4f8b53.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:09:30.017 › The resource https://discord.com/assets/ce3b8055f5114434.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:09:30.017 › The resource https://discord.com/assets/cb2006dbced0e246.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:09:30.017 › The resource https://discord.com/assets/7a6a566c2e88a35d.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:09:30.018 › The resource https://discord.com/assets/e52f0cba712e2fb4.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:09:30.018 › The resource https://discord.com/assets/dd24010f3cf7def7.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:09:35.009 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:09:35.021 › [RTCControlSocket(default)] Heartbeat ACK received
+21:09:48.011 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 7
+21:09:48.026 › [RTCControlSocket(default)] Heartbeat ACK received
+21:09:57.010 › [WindowVisibilityVideoManager] Incoming video enabled changed, incomingVideoEnabled = false
+21:10:02.010 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:10:02.022 › [RTCControlSocket(default)] Heartbeat ACK received
+21:10:07.009 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:10:07.010 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:10:16.009 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:10:16.025 › [RTCControlSocket(default)] Heartbeat ACK received
+21:10:25.251 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:10:30.009 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:10:30.021 › [RTCControlSocket(default)] Heartbeat ACK received
+21:10:43.009 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:10:43.022 › [RTCControlSocket(default)] Heartbeat ACK received
+21:10:57.009 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:10:57.024 › [RTCControlSocket(default)] Heartbeat ACK received
+21:10:59.128 › The resource https://discord.com/assets/189422196a4f8b53.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:10:59.129 › The resource https://discord.com/assets/ce3b8055f5114434.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:10:59.129 › The resource https://discord.com/assets/cb2006dbced0e246.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:10:59.129 › The resource https://discord.com/assets/7a6a566c2e88a35d.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:10:59.129 › The resource https://discord.com/assets/e52f0cba712e2fb4.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:10:59.129 › The resource https://discord.com/assets/dd24010f3cf7def7.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+21:11:11.009 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:11:11.020 › [RTCControlSocket(default)] Heartbeat ACK received
+21:11:15.009 › [ConnectionEventFramerateReducer] BaseConnection.userSpeakingChange: Reduced framerate after 15000 ms.
+21:11:15.010 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":20}
+21:11:25.009 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:11:25.022 › [RTCControlSocket(default)] Heartbeat ACK received
+21:11:30.048 › [Connection(default)] updateVideoQuality: {"remoteSinkWantsMaxFramerate":30}
+21:11:38.012 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:11:38.024 › [RTCControlSocket(default)] Heartbeat ACK received
+21:11:52.011 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:11:52.025 › [RTCControlSocket(default)] Heartbeat ACK received
+21:12:06.012 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:12:06.027 › [RTCControlSocket(default)] Heartbeat ACK received
+21:12:20.009 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:12:20.025 › [RTCControlSocket(default)] Heartbeat ACK received
+21:12:33.018 › [RTCControlSocket(default)] Sending heartbeat with last received sequence number: 8
+21:12:33.031 › [RTCControlSocket(default)] Heartbeat ACK received
+blackbox: 2/17/2026, 9:12:43 PM PST 12 before-quit
+[5:0217/211243.285698:FATAL:dbus/bus.cc:1248] D-Bus connection was disconnected. Aborting.
+
+(Discord:5): libunity-CRITICAL **: 21:12:43.285: unity_inspector_on_unity_vanished: assertion 'conn != NULL' failed
+[0217/211243.285840:ERROR:third_party/crashpad/crashpad/util/linux/scoped_ptrace_attach.cc:27] ptrace: Operation not permitted (1)
+[5:0217/211243.286101:FATAL:dbus/bus.cc:1248] D-Bus connection was disconnected. Aborting.

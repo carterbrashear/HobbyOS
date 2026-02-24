@@ -1,0 +1,17 @@
+# STAGE 1
+0x00000: Interrupt vector table
+0x00400: BIOS data area
+0x00500: Stack (backwards from 0x7c00)
+0x07c00: Code (boot sector)
+0x07e00: Loaded stage 2
+0x80000: Extended BIOS data area
+
+# STAGE 2
+0x00000: Interrupt vector table
+0x00400: BIOS data area
+0x00500: VGA Compatability (1 for VGA 0 for no VGA)
+0x00501: Stack (backwards from 0x7c00)
+0x07c00: 512 bytes of temporary memory
+0x07e00: Code (loaded from stage 1)
+0x80000: Extended BIOS data area
+
