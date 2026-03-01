@@ -14,9 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: stevenwdv/setup-fasm@v1
-
-    - name: test-fasm
-      run: fasm
-
+    
     - name: compile
       run: make build
