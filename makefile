@@ -25,8 +25,9 @@ clean:
 
 bootloader: $(BOOTLOADER_BIN)
 $(BOOTLOADER_BIN): $(STAGE1_BIN) $(STAGE2_BIN)
-	cp $(STAGE1_BIN) $(BOOTLOADER_BIN)
-	cat $(STAGE2_BIN) >> $(BOOTLOADER_BIN)
+	echo "Assembling bootloader.bin"
+	@cp $(STAGE1_BIN) $(BOOTLOADER_BIN)
+	@cat $(STAGE2_BIN) >> $(BOOTLOADER_BIN)
 
 stage1: $(STAGE1_BIN)
 $(STAGE1_BIN): $(STAGE1_SOURCES)

@@ -47,24 +47,44 @@ next_mode:
 
     inc word [NUM_VIDEO_MODES]  ; Incrament video mode count
 
-    mov bx, MODE_ID_MSG
-    call serial_print
+    if defined DEBUG_VIDEO
+        mov bx, MODE_ID_MSG
+        call serial_print
+    end if
     mov ax, cx                   ; Current video mode
     mov [TEMP_MODE], ax
-    call serial_print_hex16
-    mov bx, X_RES_MSG
-    call serial_print
+    if defined DEBUG_VIDEO
+        call serial_print_hex16
+    end if
+    
+    if defined DEBUG_VIDEO
+        mov bx, X_RES_MSG
+        call serial_print
+    end if
     mov ax, [VBE_DEVICE_INFO + 0x12] ; Get X resolution
-    call serial_print_hex16
-    mov bx, Y_RES_MSG
-    call serial_print
+    if defined DEBUG_VIDEO
+        call serial_print_hex16
+    end if
+    
+    if defined DEBUG_VIDEO
+        mov bx, Y_RES_MSG
+        call serial_print
+    end if
     mov ax, [VBE_DEVICE_INFO + 0x14] ; Get Y resolution
-    call serial_print_hex16
-    mov bx, BITS_PER_PIXEL_MSG
-    call serial_print
+    if defined DEBUG_VIDEO
+        call serial_print_hex16
+    end if
+    
+    if defined DEBUG_VIDEO
+        mov bx, BITS_PER_PIXEL_MSG
+        call serial_print
+    end if
     mov ah, [VBE_DEVICE_INFO + 0x19] ; Get bits per pixel
-    call serial_print_hex8
-    call serial_print_new_line
+    if defined DEBUG_VIDEO
+        call serial_print_hex8
+        call serial_print_new_line
+    end if
+    
     cmp ah, 0x08
     je  check_valid_mode
 skip_mode:
@@ -92,10 +112,10 @@ vbe_not_supported:
     mov ah, SET_VIDEO_MODE_ID
     mov al, TEXT_MODE_ID
     int VIDEO_INTERRUPT
-if defined DEBUG
-    mov bx, VBE_NOT_SUPPORTED_MSG
-    call serial_print
-end if
+    if defined DEBUG_VIDEO
+        mov bx, VBE_NOT_SUPPORTED_MSG
+        call serial_print
+    end if
     ; FIXME: Find alternate logic and remove hanging the system
     cli
     hlt
@@ -111,9 +131,10 @@ no_supported_modes_error:
     cli
     hlt
 
-VBE_NOT_SUPPORTED_MSG: db "VBE Not Supported!", 0x0a, 0x0d, 0x00
-X_RES_MSG:             db " X Resolution: ", 0x00
-Y_RES_MSG:             db " Y Resolution: ", 0x00
-BITS_PER_PIXEL_MSG:    db " Bits per pixel: ", 0x00
-MODE_ID_MSG:           db "Video mode: ", 0x00
-
+if defined DEBUG_VIDEO
+    VBE_NOT_SUPPORTED_MSG: db "VBE Not Supported!", 0x0a, 0x0d, 0x00
+    X_RES_MSG:             db " X Resolution: ", 0x00
+    Y_RES_MSG:             db " Y Resolution: ", 0x00
+    BITS_PER_PIXEL_MSG:    db " Bits per pixel: ", 0x00
+    MODE_ID_MSG:           db "Video mode: ", 0x00
+end if
