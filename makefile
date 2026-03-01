@@ -37,5 +37,3 @@ stage2: $(STAGE2_BIN)
 $(STAGE2_BIN): $(STAGE2_SOURCES)
 	@mkdir -p $(BUILD_DIR)
 	$(ASM) $(ASM_FLAGS) $(STAGE2_DIR)/stage2.asm $@
-
-

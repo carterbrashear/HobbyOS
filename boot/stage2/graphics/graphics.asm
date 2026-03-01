@@ -16,11 +16,13 @@ print:
     pop bx                  ; Return BX to origional state
     ret                     ; Return to print caller
 
-NUM_VIDEO_MODES:                dw 0x00
-BEST_VIDEO_MODE:                dw 0x00
-BEST_VIDEO_MODEX:               dw 0x00
-BEST_VIDEO_MODE_BITS_PER_PIXEL: dw 0x00
-
+NUM_VIDEO_MODES:  dw 0x00
+BEST_VIDEO_MODE:  dw 0x00
+BEST_VIDEO_MODEX: dw 0x00
+BEST_VIDEO_MODEY: dw 0x00
+TEMP_MODE:        dw 0x00
+;; BOOT SECTOR WILL BE WRITTEN OVER BY THIS FUNCTION
+;; Get's all supported video modes and saves the highest resolution 1 byte pixel video mode in 0x7c00 (16-bits)
 get_video_modes:
     pusha
     mov ax, GET_MODES_ID
@@ -44,8 +46,11 @@ next_mode:
     jne skip_mode               ; On fail, skip entry
 
     inc word [NUM_VIDEO_MODES]  ; Incrament video mode count
-    
-    mov ax, cx                       ; Push the video mode id
+
+    mov bx, MODE_ID_MSG
+    call serial_print
+    mov ax, cx                   ; Current video mode
+    mov [TEMP_MODE], ax
     call serial_print_hex16
     mov bx, X_RES_MSG
     call serial_print
@@ -60,14 +65,29 @@ next_mode:
     mov ah, [VBE_DEVICE_INFO + 0x19] ; Get bits per pixel
     call serial_print_hex8
     call serial_print_new_line
+    cmp ah, 0x08
+    je  check_valid_mode
 skip_mode:
     add si, 2                   ; Make si point to next video mode entry
     jmp next_mode               ; loop
 end_of_list:
-    popa
-    ret
+    mov ax, [BEST_VIDEO_MODE]   ;
+    mov [0x7c00], ax            ; Save the best video mode in 0x7c00 (16-bits)
+    cmp ax, 0x00                ;
+    je no_supported_modes_error ; If so then error
+    popa                        ; Retrun registers to before get_video_modes was called
+    ret                         ; Return to get_video_modes caller
+check_valid_mode:
+    mov ax, [VBE_DEVICE_INFO + 0x12]
+    cmp ax, [BEST_VIDEO_MODEX]
+    jg  save_mode
+    jmp skip_mode
 save_mode:
-    
+    mov ax, [TEMP_MODE]
+    mov [BEST_VIDEO_MODE], ax
+    mov ax, [VBE_DEVICE_INFO + 0x12]
+    mov [BEST_VIDEO_MODEX], ax
+    jmp skip_mode
 vbe_not_supported:
     mov ah, SET_VIDEO_MODE_ID
     mov al, TEXT_MODE_ID
@@ -83,6 +103,10 @@ end if
     popa                            ; Pushed after get_video_modes is called
     ret                             ; Return to get_video_modes caller
 .save_error:
+    ;; FIXME: Handle this error
+    cli
+    hlt
+no_supported_modes_error:
     ;; FIXME: Handle this error
     cli
     hlt
