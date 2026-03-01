@@ -16,4 +16,4 @@ jobs:
     - uses: stevenwdv/setup-fasm@v1
     
     - name: compile
-      run: make build
+      run: make all
