@@ -1,3 +1,5 @@
+use16
+
 ;; Prints C-style strings to serial console
 ;; INPUT:
 ;;  BX = String
@@ -87,4 +89,4 @@ serial_print_char:
     ;; Returning internal registers 
     pop ax                  ; Return the state of al
     pop dx                  ; Return state of dx
-
+	ret

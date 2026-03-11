@@ -1,16 +1,41 @@
 use16
 
+;; COLOR DEFINITIONS (when not in text mode)
+BLACK 			= 0x00
+BLUE 			= 0x01
+GREEN 			= 0x02
+CYAN 			= 0x03
+RED 			= 0x04
+MAGENTA 		= 0x05
+BROWN 			= 0x06
+LIGHT_GREY 		= 0x07
+DARK_GREY 		= 0x08
+LIGHT_BLUE 		= 0x09
+LIGHT_GREEN 	= 0x0a
+LIGHT_CYAN 		= 0x0b
+LIGHT_RED 		= 0x0c
+LIGHT_MAGENTA 	= 0x0d
+YELLOW 			= 0x0e
+WHITE 			= 0x0f
+
 NEWLINE           = 0x000a ; ASCII code for newline character
 CARRIAGE_RETURN   = 0x000d ; ASCII code for carriage return character
 VBE_BLOCK_INFO    = 0x7c00 ; Write the block info over stage 1 of the boot sector (we don't need it anymore)
 VBE_DEVICE_INFO   = 0x0500 ; Using 256 bytes from the beginning of free memory (the stack is not this high so we're fine)
 GET_MODES_ID      = 0x4F00 ; AX for BIOS interrupt
 GET_MODE_INFO_ID  = 0x4F01 ; AX for BIOS interrupt
-GET_MODE_SUCCESS  = 0x004F ; AX after BIOS interrupt
+SWITCH_VBE_MODE   = 0x4F02 ; AX for BIOS interrupt
+VBE_SUCCESS       = 0x004F ; AX after BIOS interrupt
 VIDEO_INTERRUPT   = 0x0010 ; BIOS interrupt
 SET_VIDEO_MODE_ID = 0x0000 ; AH for BIOS interrupt
 TEXT_MODE_ID      = 0x0003 ; AL for BIOS interrupt
 VIDEO_LIST_END    = 0xffff ; End marker in video mode list memory structure
+
+;; Redefinitions for using video mode data
+define VRAM 		[BEST_VIDEO_MODE_ADDR]
+define VIDEO_MODE 	[BEST_VIDEO_MODE]
+define XRES 		[BEST_VIDEO_MODEX]
+define YRES 		[BEST_VIDEO_MODEY]
 
 macro print_fast string {
     local .loop             ; Mark .loop as local to this macro

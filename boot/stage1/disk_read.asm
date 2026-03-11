@@ -15,6 +15,8 @@ DRIVE_NUMBER: db 0x00
 
 disk_read:
     pusha					; Save registers
+	xor bx, bx				; BX = 0
+	mov es, bx				; ES = 0
     mov dl, [DRIVE_NUMBER]	; Load saved drive number (needed for int 0x13)
 	mov ax, SECTOR_COUNT	; needed for int 0x13
 	mov cl, STARTING_SECTOR	; needed for int 0x13
@@ -25,28 +27,23 @@ disk_read:
     call chs_load			; Load the data
 	inc cl					; Point cl to the next sector
 	add bx, 0x200			; Point memory address to next 512 bytes
-	dec bx					; Decrement the sector count
-	jmp @b
+	dec ax					; Decrement the sector count
+	jmp @b					; Load the next sector
 @@: ; END LOOP
     popa					; Return registers
     ret						; Return to disk_read caller
-
+;; Called by disk_read only
 chs_load:
     push ax					; Save AX
     mov ah, BIOS_CHS_LOAD	; AH = 0x02
     mov al, 1				; Read 1 sector
     xor ch, ch				; Cylinder 0
     xor dh, dh				; Head 0
-    push bx					; Save our target offset (e.g., 0x7E00)
-    xor bx, bx				; BX = 0 (needed to set ES = 0)
-    mov es, bx				; ES = 0
-    pop bx					; BX = Target memory address
     int 0x13
-    jc  disk_error         	; Jump if carry (error)
+    jc  @f		         	; Exit on error
     pop ax                 	; Restore AX
     ret
-
-disk_error:
+@@: ; Error jump point
 	pop ax					; Restore stack (not needed here)
 	;; Print error message
     mov bx, DISK_ERROR_MSG
