@@ -5,15 +5,13 @@ db "Stage 2", 0x00 ; 8 bytes
 
 ; DEBUG = 1
 DEBUG_VIDEO = 1
+NUMBER_OF_SECTORS = 2
 
 include "serial/serial_console.inc"
 include "graphics/graphics.inc"
 
 start:
     mov bx, TEST_MSG
-    mov ax, 0x10
-    call serial_print_hex16
-    call serial_print_new_line
     call print
     call serial_print
     call check_processor
@@ -23,8 +21,11 @@ terminate:
     cli
     hlt
 
-TEST_MSG: db "Hi!", 0x0a, 0x0d, 0x00
+TEST_MSG: db "Starting...", 0x0a, 0x0d, 0x00
 
 include "graphics/graphics.asm"
 include "serial/serial_console.asm"
 include "protected_mode/protected_mode.asm"
+
+;; Pad the rest of the binary files with zero
+times (NUMBER_OF_SECTORS*512)-($-$$) db 0x00

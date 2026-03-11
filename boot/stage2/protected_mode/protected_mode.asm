@@ -1,34 +1,48 @@
 use16
 
 check_processor:
+	;; FIXME: Explodes when I uncomment this
     if defined DEBUG
+		pusha
         mov bx, CPU_PM_CHECK_MSG
         call serial_print
+		popa
     end if
-    pushf
-    xor ah, ah
-    push ax
-    popf
-    pushf
-    pop ax
+	;; Save flags for check
+    pushf					; stack = 2 bytes
+	;; Check for 8086/8088
+	xor ah, ah
+    push ax					; stack = 4 bytes
+    popf					; stack = 2 bytes
+    pushf					; stack = 4 bytes
+    pop ax					; stack = 2 bytes
     and ah, 0xf0
     cmp ah, 0xf0
     je no_protected_mode
+	;; Check for i286
     mov ah, 0x70
-    push ax
-    popf
-    pushf
-    pop ax
+    push ax					; stack = 4 bytes
+    popf					; stack = 2 bytes
+    pushf					; stack = 4 bytes
+    pop ax					; stack = 2 bytes
     and ah, 0x70
     jz no_protected_mode
-    popf
-    if defined DEBUG
-        mov bx, PASS_MSG
-        call serial_print
-    end if
+	;; Return flags after check
+    popf					; stack = 0 bytes
+
+	;; FIXME: Explodes when I uncomment this
+    ; if defined DEBUG
+		; pusha
+        ; mov bx, PASS_MSG
+        ; call serial_print
+		; popa
+    ; end if
     ret
 no_protected_mode:
+	popf					; Stack = 0
     if defined DEBUG
+		mov bx, CPU_PM_CHECK_MSG
+		call serial_print
         mov bx, FAIL_MSG
         call serial_print
     end if

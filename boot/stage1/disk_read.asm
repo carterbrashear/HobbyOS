@@ -1,6 +1,6 @@
 use16
 
-SECTOR_COUNT =          5
+SECTOR_COUNT =          2
 SECTOR_COUNT_LBA =      SECTOR_COUNT + 1
 DEST_ADDR =             0x7e00
 LBA_NUMBER =            0x01
@@ -9,28 +9,49 @@ BIOS_LBA_LOAD =         0x42
 BIOS_DISK_INTERRUPT =   0x13
 MEMORY_ZERO_PAGE =      0x00
 BIOS_CHS_LOAD =         0x02
+STARTING_SECTOR =		0x02
 
 DRIVE_NUMBER: db 0x00
 
 disk_read:
-    pusha
+    pusha					; Save registers
+    mov dl, [DRIVE_NUMBER]	; Load saved drive number (needed for int 0x13)
+	mov ax, SECTOR_COUNT	; needed for int 0x13
+	mov cl, STARTING_SECTOR	; needed for int 0x13
+	mov bx, DEST_ADDR		; needed for int 0x13
+@@: ; READ LOOP
+	cmp ax, 0x00			; Check if we are done reading
+	je  @f					; If so, then return
+    call chs_load			; Load the data
+	inc cl					; Point cl to the next sector
+	add bx, 0x200			; Point memory address to next 512 bytes
+	dec bx					; Decrement the sector count
+	jmp @b
+@@: ; END LOOP
+    popa					; Return registers
+    ret						; Return to disk_read caller
+
 chs_load:
-    mov ah, BIOS_CHS_LOAD
-    mov al, 9  ; Sectors to read
-    xor ch, ch ; Cylinder 0
-    xor dh, dh ; Head 0
-    mov cl, 2  ; Sector start (1 is boot sector)
-    mov dl, [DRIVE_NUMBER]
-    xor bx, bx
-    mov es, bx
-    mov bx, DEST_ADDR
+    push ax					; Save AX
+    mov ah, BIOS_CHS_LOAD	; AH = 0x02
+    mov al, 1				; Read 1 sector
+    xor ch, ch				; Cylinder 0
+    xor dh, dh				; Head 0
+    push bx					; Save our target offset (e.g., 0x7E00)
+    xor bx, bx				; BX = 0 (needed to set ES = 0)
+    mov es, bx				; ES = 0
+    pop bx					; BX = Target memory address
     int 0x13
-    popa
+    jc  disk_error         	; Jump if carry (error)
+    pop ax                 	; Restore AX
     ret
 
 disk_error:
-    mov  bx, DISK_ERROR_MSG
+	pop ax					; Restore stack (not needed here)
+	;; Print error message
+    mov bx, DISK_ERROR_MSG
     call print_string
+	;; Kill the system
     cli
     hlt
 
@@ -44,4 +65,6 @@ disk_error:
 ; d_lba:  dd LBA_NUMBER
 ;         dd 0x00
 
+DBG1: db "1: ", 0x00
+DBG2: db "2: ", 0x00
 DISK_ERROR_MSG: db "Error reading disk!", 0x0a, 0x0d, 0x00

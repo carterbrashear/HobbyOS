@@ -1,0 +1,23 @@
+# Basic bochsrc for booting a .bin floppy image
+# Use 'x' or 'sdl2' for display on Debian to avoid wxWidgets errors
+config_interface: textconfig
+display_library: x
+
+# Memory and ROM settings
+megs: 32
+romimage: file=/usr/share/bochs/BIOS-bochs-latest
+vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+
+# Floppy configuration
+# Replace "your_file.bin" with the actual name of your binary
+floppya: 1_44="build/bootloader.bin", status=inserted
+boot: floppy
+
+# Log file for debugging
+log: bochsout.txt
+
+# Mouse and Keyboard (Optional)
+mouse: enabled=0
+
+# Show the serial console in the terminal
+# com1: enabled=1, mode=term, dev=/dev/pts/X
