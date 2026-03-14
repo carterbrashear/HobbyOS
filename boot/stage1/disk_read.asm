@@ -1,6 +1,6 @@
 use16
 
-SECTOR_COUNT =          2
+SECTOR_COUNT =          3
 SECTOR_COUNT_LBA =      SECTOR_COUNT + 1
 DEST_ADDR =             0x7e00
 LBA_NUMBER =            0x01
@@ -11,13 +11,11 @@ MEMORY_ZERO_PAGE =      0x00
 BIOS_CHS_LOAD =         0x02
 STARTING_SECTOR =		0x02
 
-DRIVE_NUMBER: db 0x00
-
 disk_read:
     pusha					; Save registers
 	xor bx, bx				; BX = 0
 	mov es, bx				; ES = 0
-    mov dl, [DRIVE_NUMBER]	; Load saved drive number (needed for int 0x13)
+    mov dl, [drive_number]	; Load saved drive number (needed for int 0x13)
 	mov ax, SECTOR_COUNT	; needed for int 0x13
 	mov cl, STARTING_SECTOR	; needed for int 0x13
 	mov bx, DEST_ADDR		; needed for int 0x13
@@ -39,7 +37,7 @@ chs_load:
     mov al, 1				; Read 1 sector
     xor ch, ch				; Cylinder 0
     xor dh, dh				; Head 0
-    int 0x13
+    int BIOS_DISK_INTERRUPT	; Ask the BIOS to read the sector
     jc  @f		         	; Exit on error
     pop ax                 	; Restore AX
     ret

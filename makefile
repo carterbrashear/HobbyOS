@@ -3,7 +3,7 @@ ASM := fasm
 ASM_FLAGS :=
 
 # Change this number when loading more sectors for stage 2
-STAGE2_ALLOWED_SECTORS := 2
+STAGE2_ALLOWED_SECTORS := 3
 # Must always be 1
 STAGE1_ALLOWED_SECTORS := 1
 # max size = number of sectors * 512
@@ -32,7 +32,7 @@ all: $(BOOTLOADER_BIN)
 
 # Run qemu after building
 run: all
-	qemu-system-i386 -drive file=$(BOOTLOADER_BIN),format=raw
+	qemu-system-i386 -drive file=$(BOOTLOADER_BIN),format=raw -serial stdio
 
 # Binary removal
 clean:

@@ -28,3 +28,28 @@ draw:
 	pop ebx			; Return EBX
 	pop eax			; Return EAX
 	ret				; Return to draw caller
+
+
+;; FIXME: THIS FUNCTION DOES NOT WORK
+;; INPUTS: AL = 8-bit color index
+clear_screen:
+    pushad
+    mov edi, VRAM      ; Load the address of the Framebuffer
+    mov ecx, XRES        
+    imul ecx, YRES       ; ECX = Total number of pixels (1 byte each)
+    
+    mov ah, al           ; Copy color to AH
+    shl eax, 16          ; Move to high word
+    mov ax, [esp + 32]   ; Wait, simpler way:
+    
+    ; Re-do the EAX setup for rep stosd (faster than stosb)
+    movzx eax, al        ; Clear upper bits of EAX
+    mov ah, al           ; Fill EAX with 4 copies of the color
+    mov ebx, eax
+    shl eax, 16
+    or eax, ebx          ; Now EAX = 0xYYYYYYYY (where Y is your color index)
+    
+    cld
+    rep stosd            ; Write 4 pixels at a time
+    popad
+    ret
